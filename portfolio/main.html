@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G's Portfolio</title>
+    <link rel="stylesheet" href="test.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <marquee class="marquee" direction="right">Welcome to my portfolio! Keep hovering to explore more.</marquee>
+</head>
+
+<body>
+  <!-- Top Fixed Links -->
+  <div class="top-links">
+    <a href="https://www.linkedin.com/in/ravigayathri/" target="_blank" class="top-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="mailto:vr.h.gayathri@gmail.com" class="top-link">
+        <i class="fas fa-envelope"></i> Email
+    </a>
+</div>
+
+  <div class="center-container">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="G.jpg" alt="G" class="round-image">
+      </div>
+      <div class="flip-card-back">
+        <h1>Hy!!</h1> 
+        <p>Nice meeting you!!</p> 
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- New Message Section -->
+  <div class="profile-message">
+    <p>I am Gayathri Ravi, a passionate DevOps Engineer with expertise in Azure, Terraform, and DevOps practices.</p>
+  </div>
+ <!-- Animation Section -->
+ <div class="animation-container">
+  <div class="animated-block home" 
+  onclick="toggleContent(this, 'Welcome, Experienced DevOps and Cloud Engineer with a strong background in Infrastructure as Code (IaC), Microsoft Azure, and Terraform. Proficient in deploying and managing enterprise-grade solutions using modern DevOps methodologies. Skilled in scripting, automation, and collaborative problem-solving in Agile environments. Adept at quickly adapting to new technologies and team dynamics.')">Home</div>  
+  <div class="animated-block skills" onclick="toggleContent(this,`<ul>
+    <li>Infrastructure as Code (IaC): Terraform, Azure Resource Manager (ARM) Templates</li>
+    <li>Programming Languages: C#, . Net, SQL </li>
+    <li>Cloud Platform: Microsoft Azure</li>
+    <li>DevOps & Version Control: GIT, Azure Repos</li>
+    <li>CI/CD: GitHub, Azure DevOps</li>
+    <li>PAAS Services and Storage: Logic Apps, Azure Function, Azure Data Factory, Service Bus, Storage Account, API Management, Key Vault. Azure Application Insights, Azure Service, Health, Dashboards, KQL </li>
+    
+</ul>`)">Skills</div>
+  <div class="animated-block experience" onclick="toggleContent(this,`
+  <div class='experience-container'>
+      <div class='card'>
+          <h3>Tata Consultancy Services</h3>
+          <p>Role: AIS Integration Developer</p>
+          <p>Duration: June 2021 - Dec 2023</p>
+          <p>Skills: Terraform, DevOps, Microsoft Azure</p>
+      </div>
+      <div class='card'>
+          <h3>UST Global</h3>
+          <p>Role: Software Developer</p>
+          <p>Duration: Dec 2023 - July 2024</p>
+          <p>Skills: C#, .NET, SQL Server</p>
+      </div>
+  </div>
+`)">Experience</div>
+
+<div class="animated-block qualifications" onclick="toggleContent(this,`
+    <div class='qualification-container'>
+        <div class='qualification-card left-slide'>
+            <h3>Master of Science</h3>
+            <p>Pursuing: Aug 2024 - May 2026</p>
+            <p>Field: Computer Science</p>
+            <p>University: University of Illinois, Springfield</p>
+            <p>Location: Springfield, Illinois</p>
+        </div>
+        <div class='qualification-card right-slide'>
+            <h3>Bachelor of Engineering</h3>
+            <p>Completed: May 2021</p>
+            <p>Field: Computer Science and Engineering</p>
+            <p>Institute: Rajalakshmi Institute of Technology</p>
+            <p>Location: Chennai, India</p>
+            <p>GPA: 3.5/4</p>
+        </div>
+    </div>
+`)">Qualifications</div>
+
+<div class="animated-block certifications" onclick="toggleContent(this,`
+    <div class='certification-container'>
+        <div class='certification-card fade-in'>
+            <h3>Azure Fundamentals</h3>
+            <p>Certification: AZ-900</p>
+        </div>
+        <div class='certification-card fade-in'>
+            <h3>Developing Solutions</h3>
+            <p>Certification: AZ-204</p>
+        </div>
+        <div class='certification-card fade-in'>
+            <h3>Data Engineer</h3>
+            <p>Certification: DP-203</p>
+        </div>
+    </div>
+`)">Certifications</div>
+<div class="animated-block achievements" onclick="toggleContent(this,`
+<div class='achievement-container'>
+    <div class='achievement-card pop-from-left'>
+        <h3>Special Initiative Award</h3>
+        <p>For outstanding work contribution to the organization</p>
+        <p>Date: Jan 2022</p>
+    </div>
+    <div class='achievement-card pop-from-top'>
+        <h3>Continuous Feedback Star</h3>
+        <p>In recognition of dedication to the performance journey</p>
+        <p>Date: Dec 2022</p>
+    </div>
+    <div class='achievement-card pop-from-right'>
+        <h3>Xcelerate Warrior Certificate</h3>
+        <p>As an achievement towards aspiration</p>
+        <p>Date: Jan 2023</p>
+    </div>
+</div>
+`)">Achievements</div>
+</div>
+
+
+<!-- Content Display Section -->
+<div id="content-display" class="content-display"></div>
+
+<script>
+  function toggleContent(block, content) {
+    const contentDisplay = document.getElementById('dynamic-content');
+
+    // Check if the block is already active
+    if (block.classList.contains('active')) {
+      // Hide the content and remove highlight
+      contentDisplay.style.display = 'none';
+      block.classList.remove('active');
+    } else {
+      // Reset all blocks and hide content
+      document.querySelectorAll('.animated-block').forEach(el => el.classList.remove('active'));
+      contentDisplay.style.display = 'none';
+
+      // Highlight the clicked block
+      block.classList.add('active');
+
+      // Display content dynamically in the center
+      contentDisplay.innerHTML = content;
+      contentDisplay.style.display = 'block'; // Make it visible
+    }
+  }
+</script>
+
+
+
+<div id="dynamic-content" class="dynamic-content"></div>
+<!-- Footer Section -->
+<footer class="footer">
+  © 2024 Gayathri. All Rights Reserved.
+</footer>
+
+</body>
+</html>
