@@ -51,6 +51,7 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  
 }
 
 .flip-card:hover .flip-card-inner {
@@ -83,6 +84,7 @@ body {
   flex-direction: column;
   font-family: Arial, sans-serif;
   font-size: 16px;
+  
 }
 
 .round-image {
@@ -510,7 +512,8 @@ body {
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
   .flip-card {
-    width: 90%;
+    width: 50vw;
+    max-width: 200px;
   }
 
   .animation-container {
