@@ -702,8 +702,17 @@ body {
 @media (max-width: 480px) {
   .welcome {
     font-size: 10px;
-   
+  }
+
+  /* Individual link styles */
+  .top-link {
+    margin-left: 40px;
+  }
   
+  .message{
+    position: fixed; /* Keeps it constant on the viewport */
+      top: 55%; /* Adjust to vertically center */
+      left: 50%; /* Adjust to horizontally center */
+      font-size: 14px; /* Adjust font size as needed */  
   }
 }
-
