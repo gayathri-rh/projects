@@ -9,11 +9,12 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow-y: auto;
 }
 
-.marquee {
+.welcome {
   position: absolute;
-  top: 20px;
+  top: -5px;
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -28,33 +29,35 @@ body {
 
 .center-container {
   position: relative;
-  top: -170px;
+  top: -240px;
   position: fixed;
 }
 
 
 .flip-card {
   background-color: transparent;
-  width: 30vw;
-  height: 30vw;
+  width: 150px;
+  height: 150px;
   perspective: 1000px;
-  position: absolute;
+  position: relative;
   top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 20px auto;
   max-width: 300px;
-
+  max-height: 300px;
+  border-radius: 50%;
 }
 
 .flip-card-inner {
   position: relative;
-  padding-top: 100%;
+ /* padding-top: 100%; */
   width: 100%;
-  height: 0;
+  height: 100%;
   text-align: center;
-  transition: transform 0.6s;
+  transition: transform 0.6s ease;
   transform-style: preserve-3d;
+  border-radius: 50%;
   
 }
 
@@ -81,9 +84,11 @@ body {
 }
 
 .flip-card-back {
-  background-image: url('sample.jpg');
+  background-image: url('sample.jpg'); 
+  background-size: cover; /* Ensure background covers the back face */
+  background-position: center; /* Center the background image */
   color: white;
-  transform: rotateY(180deg) scale(0.8);
+  transform: rotateY(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,7 +111,7 @@ body {
 
 .profile-message {
   position: fixed;  /*Makes the element fixed */
-  top: 270px; /*Position relative to the bottom of the viewport */
+  top: 250px; /*Position relative to the bottom of the viewport */
   left: 50%; /* Center the message horizontally */
   transform: translateX(-50%); /* Adjust for centering */
   font-size: 16px;
@@ -122,10 +127,16 @@ body {
 }
 
 .message{
-  position: fixed;
-  top: 310px;
-  left:30%;
-  color: black;
+  position: fixed; /* Keeps it constant on the viewport */
+    top: 45%; /* Adjust to vertically center */
+    left: 50%; /* Adjust to horizontally center */
+    transform: translate(-50%, -50%); /* Center the element perfectly */
+    color: black;
+    font-size: 18px; /* Adjust font size as needed */
+    padding: 10px;
+   
+    border-radius: 8px;
+    z-index: 1000; /* Ensure it stays above other content */
 }
 .animation-container {
   display: flex;/* Use flexbox for alignment */
@@ -209,7 +220,7 @@ body {
   text-align: center;
   font-size: 18px;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3); 
   padding: 10px;
   border-radius: 8px;
   display: none; /* Initially hidden */
@@ -235,6 +246,7 @@ body {
   align-items: center;
   gap: 20px; /* Add space between cards */
   margin-top: 20px;
+
 }
 
  /* Left sliding animation */
@@ -274,20 +286,39 @@ body {
   color: #fff;
   border-radius: 8px;
   padding: 15px;
-  width: 85%; /* Each card takes 45% of the container width */
+  width: 90%; /* Each card takes 45% of the container width */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 300px; /* Limit the size */
+  text-align: left;
+  position: relative;
+  cursor: pointer; /* Pointer cursor for interactivity */
+  
 }
 
-.card:hover {
-  transform: scale(1.05); /* Slight zoom effect */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+.card:hover .work-details,
+.card:focus-within .work-details {
+  display: block; /* Show details on hover or focus */
+  
 }
-
+.work-details {
+  display: none; /* Hidden by default */
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background for readability */
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  font-size: 10px;
+  
+}
 .card h3 {
   margin: 0 0 10px;
   font-size: 18px;
   color: #00d4ff;
+ 
 }
 
 .card p {
@@ -329,7 +360,6 @@ body {
   color: #00d4ff;
 }
 
-
 /* Left sliding animation */
 .left-slide {
   animation: slide-in-left 1s forwards;
@@ -362,6 +392,11 @@ body {
   }
 }
 
+.qualification-card p {
+  font-size: 14px; /* Reduced font size */
+  margin: 5px 0;
+  line-height: 1.4; /* Adjust line spacing for readability */
+}
 /* Container for the certification cards */
 .certification-container {
   display: flex;
@@ -568,53 +603,98 @@ body {
   
 }
 
-/* Media Queries for Smaller Screens */
+/* Tab view */
 @media (max-width: 768px) {
-  .flip-card {
-    width: 25vw;
-    max-width: 200px;
+  .message {
+      font-size: 14px; /* Smaller text for smaller screens */
+      padding: 8px;
+      width: 90%; /* Adjust width to fit smaller screens */
+      top: 45%;
+      left:65%;
   }
 
-  .animation-container {
-    gap: 5px;
-  }
-
-  .animated-block {
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-  }
-
- /* .profile-message {
-    font-size: 14px;
-    padding: 8px;
-    top: 400px;
-    left: 50%;
-  }*/
-  .animated-block:hover {
-    transform: scale(1.02); /* Slight hover effect for smaller screens */
-  }
+  .content-display {
+    max-width: 90%; /* Ensure it doesn't exceed the screen width */
+    max-height: 65vh; /* Further limit height for smaller screens */
+    margin: 0 auto; /* Center the box */
+    font-size: 14px; /* Reduce font size for better fit */
+    padding: 10px;
 }
 
-/* Media Queries for Extra Small Screens */
-@media (max-width: 480px) {
-  .animated-block {
-    width: 100%;
-    font-size: 12px;
-    padding: 5px;
-  }
-  .animation-container {
-    gap: 5px;
-  }
+  .qualification-container {
+    flex-direction: row; /* Stack the cards vertically */
+    gap: 10px; /* Add some spacing between cards */
+}
 
- /* .profile-message {
-    font-size: 12px;
-    padding: 5px;
-  }*/
+.qualification-card {
+    width: 90%; /* Reduce width to fit smaller screens */
+    max-width: 300px; /* Ensure it doesn't get too wide */
+    margin: 0 auto; /* Center the card */
+}
 
-  .flip-card {
-    width: 10vw;
-    max-width: 40px;
-  }
+.qualification-card p {
+  font-size: 12px; /* Reduced font size */
+
+}
+
+.experience-container {
+  flex-direction: row; /* Stack cards vertically */
+  gap: 15px; /* Adjust gap for vertical layout */
+  max-height: 80vh; /* Limit the container height */
+  padding: 10px; /* Optional: Add padding for better aesthetics */
+ margin-bottom: 50px; /* Add space equal to the footer height */
+}
+
+.card {
+  
+  width: 80%; /* Reduce width for smaller screens */
+  max-width: 350px; /* Optional size limit */
+  margin: 0 auto; /* Center the cards */
+
+}
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #00d4ff;
+ 
+}
+
+
+.achievement-container {
+  flex-direction: row; /* Stack cards vertically */
+  gap: 15px; /* Reduce space between cards */
+  padding: 10px; /* Add padding for better spacing */
+  max-width: 90%; /* Ensure it fits within the screen */
+  margin: 0 auto; /* Center the container */
+}
+
+.achievement-card {
+  width: 100%; /* Make cards span the container width */
+  max-width: 350px; /* Limit maximum width */
+  margin: 0 auto; /* Center each card */
+  padding: 15px; /* Adjust padding for better fit */
+}
+.dynamic-content{
+  padding: 3px;
+}
+.work-details {
+  max-height: 200px; /* Slightly smaller height for tab view */
+  overflow-y: auto; /* Enable scrolling if content exceeds the container */
+  margin: 0;
+    padding: 10px 10px 50px; /* Add padding at the bottom */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+
+}
+.work-details ul {
+  padding: 0 10px; /* Reduce padding for smaller screens */
+  
+}
+
+.work-details li {
+  font-size: 13px; /* Slightly reduce font size */
+  margin: 3px 0; /* Minimize spacing between items */
+ 
+}
 }
 
