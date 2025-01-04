@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G's Portfolio</title>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <marquee class="marquee" direction="right">Welcome to my portfolio! Keep hovering to explore more.</marquee>
+    <div class = 'welcome'>
+   <h2>Welcome to my portfolio!</h2>
+  </div>
 </head>
 
 <body>
@@ -28,8 +30,10 @@
         <img src="G.jpg" alt="G" class="round-image">
       </div>
       <div class="flip-card-back">
+       
         <h1>Hy!!</h1> 
         <p>Nice meeting you!!</p> 
+        
       </div>
     </div>
   </div>
@@ -37,34 +41,62 @@
 
   <!-- New Message Section -->
   <div class="profile-message">
-    <p>I am Gayathri Ravi, a passionate DevOps Engineer with expertise in Azure, Terraform, and DevOps practices.</p>
+    <h3> Gayathri Ravi </h3> </div>
+    <div class="message">
+    <p> Passionate Software Engineer | Expertise in Azure, Terraform, and DevOps practices.</p>
   </div>
  <!-- Animation Section -->
  <div class="animation-container">
   <div class="animated-block home" 
-  onclick="toggleContent(this, 'Welcome, Experienced DevOps and Cloud Engineer with a strong background in Infrastructure as Code (IaC), Microsoft Azure, and Terraform. Proficient in deploying and managing enterprise-grade solutions using modern DevOps methodologies. Skilled in scripting, automation, and collaborative problem-solving in Agile environments. Adept at quickly adapting to new technologies and team dynamics.')">Home</div>  
+  onclick="toggleContent(this, 'I am an Experienced DevOps and Cloud Engineer with a strong background in Infrastructure as Code (IaC), Microsoft Azure, and Terraform. Proficient in deploying and managing enterprise-grade solutions using modern DevOps methodologies. Skilled in scripting, automation, and collaborative problem-solving in Agile environments. Adept at quickly adapting to new technologies and team dynamics.')">Home</div>  
   <div class="animated-block skills" onclick="toggleContent(this,`<ul>
     <li>Infrastructure as Code (IaC): Terraform, Azure Resource Manager (ARM) Templates</li>
     <li>Programming Languages: C#, . Net, SQL </li>
     <li>Cloud Platform: Microsoft Azure</li>
     <li>DevOps & Version Control: GIT, Azure Repos</li>
     <li>CI/CD: GitHub, Azure DevOps</li>
-    <li>PAAS Services and Storage: Logic Apps, Azure Function, Azure Data Factory, Service Bus, Storage Account, API Management, Key Vault. Azure Application Insights, Azure Service, Health, Dashboards, KQL </li>
-    
+    <li>PAAS Services and Storage: Logic Apps, Azure Function, Azure Data Factory, Service Bus, Storage Account, API Management, Key Vault. Azure Application Insights, Azure Service, Health, Dashboards, KQL </li>   
 </ul>`)">Skills</div>
   <div class="animated-block experience" onclick="toggleContent(this,`
   <div class='experience-container'>
-      <div class='card'>
+      <div class='left-slide-card'>
+        <div class='card'>
           <h3>Tata Consultancy Services</h3>
           <p>Role: AIS Integration Developer</p>
           <p>Duration: June 2021 - Dec 2023</p>
           <p>Skills: Terraform, DevOps, Microsoft Azure</p>
+       
+          <div class= 'work-details'>
+          <h3>Work Highlights:</h3>
+          <ul>
+          <li> Designed and implemented Infrastructure as Code using Terraform.</li>
+           <li>Streamlined CI/CD pipelines for automated deployments in Azure.</li>
+          <li>Optimized resource allocation to reduce cloud costs.</li>
+          <li>Enhanced team productivity by integrating DevOps tools.</li>
+        </ul>
       </div>
-      <div class='card'>
+      </div>
+         
+      </div>
+      <div class='right-slide-card'>
+         <div class='card'>
           <h3>UST Global</h3>
           <p>Role: Software Developer</p>
           <p>Duration: Dec 2023 - July 2024</p>
           <p>Skills: C#, .NET, SQL Server</p>
+      
+          <div class='work-details'>
+       
+          <h3>Work Highlights:</h3>
+          <ul>
+          <li> Built scalable .NET applications with enterprise-grade performance.</li>
+            <li>Integrated SQL Server databases for optimized data access.</li>
+          <li> Automated testing workflows to ensure software reliability.</li>
+          <li> Collaborated with cross-functional teams to deliver client solutions.</li>
+        </ul>
+        </div>
+      </div>
+         
       </div>
   </div>
 `)">Experience</div>
@@ -77,6 +109,7 @@
             <p>Field: Computer Science</p>
             <p>University: University of Illinois, Springfield</p>
             <p>Location: Springfield, Illinois</p>
+            <p>GPA: 4/4</p>
         </div>
         <div class='qualification-card right-slide'>
             <h3>Bachelor of Engineering</h3>
@@ -133,12 +166,14 @@
 <script>
   function toggleContent(block, content) {
     const contentDisplay = document.getElementById('dynamic-content');
+    
 
     // Check if the block is already active
     if (block.classList.contains('active')) {
       // Hide the content and remove highlight
       contentDisplay.style.display = 'none';
       block.classList.remove('active');
+      
     } else {
       // Reset all blocks and hide content
       document.querySelectorAll('.animated-block').forEach(el => el.classList.remove('active'));
@@ -150,11 +185,26 @@
       // Display content dynamically in the center
       contentDisplay.innerHTML = content;
       contentDisplay.style.display = 'block'; // Make it visible
+      
     }
+    document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Toggle 'touched' class on the tile
+      if (card.classList.contains('touched')) {
+        card.classList.remove('touched'); // Reset to default
+      } else {
+        // Ensure only one tile is active at a time
+        cards.forEach(t => t.classList.remove('touched'));
+        card.classList.add('touched'); // Activate the touched tile
+      }
+    });
+  });
+});
   }
 </script>
-
-
 
 <div id="dynamic-content" class="dynamic-content"></div>
 <!-- Footer Section -->
