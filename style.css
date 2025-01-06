@@ -110,7 +110,7 @@ body {
 }
 
 .profile-message {
-  position: fixed;  /*Makes the element fixed */
+  position: absolute;  /*Makes the element fixed */
   top: 250px; /*Position relative to the bottom of the viewport */
   left: 50%; /* Center the message horizontally */
   transform: translateX(-50%); /* Adjust for centering */
@@ -700,19 +700,53 @@ body {
 
 /* Mobile view */
 @media (max-width: 480px) {
+  body{
+  margin: 0;
+  padding-bottom: 60px;
+  }
   .welcome {
     font-size: 10px;
   }
 
   /* Individual link styles */
   .top-link {
+    
+    
     margin-left: 40px;
   }
   
   .message{
-    position: fixed; /* Keeps it constant on the viewport */
-      top: 55%; /* Adjust to vertically center */
-      left: 50%; /* Adjust to horizontally center */
+    position: absolute; /* Keeps it constant on the viewport */
+      top: 37%; /* Adjust to vertically center */
+      left:55%; /* Adjust to horizontally center */
       font-size: 14px; /* Adjust font size as needed */  
   }
+
+  .profile-message {
+    position: absolute;  /*Makes the element fixed */
+    top: 250px; /*Position relative to the bottom of the viewport */
+    left: 50%; /* Center the message horizontally */
+  }
+
+  .footer {
+   position: fixed;
+    font-size: 12px; /* Slightly smaller font for mobile screens */
+    padding: 8px 0; /* Adjust padding for smaller screens */
+    max-height: 60px;
+}
+  
+.dynamic-content {
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  margin-top: 250px;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 90%;
+  font-size: 13px;
+}
+
 }
