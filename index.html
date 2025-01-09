@@ -40,11 +40,13 @@
   </div>
 
   <!-- New Message Section -->
+  
   <div class="profile-message">
     <h3> Gayathri Ravi </h3> </div>
     <div class="message">
     <p> Passionate Software Engineer | Expertise in Azure, Terraform, and DevOps practices.</p>
   </div>
+  
  <!-- Animation Section -->
  <div class="animation-container">
   <div class="animated-block home" 
@@ -203,6 +205,22 @@
   });
 });
   }
+
+  
+    const contentDisplay = document.getElementById('content-display');
+
+    // Reset all blocks to inactive
+    document.querySelectorAll('.animated-block').forEach(el => el.classList.remove('active'));
+    
+    // Set the clicked block as active
+    block.classList.add('active');
+
+    // Display content without animations
+    contentDisplay.innerHTML = content;
+    contentDisplay.style.display = 'block';
+
+
+
 </script>
 
 <div id="dynamic-content" class="dynamic-content"></div>
