@@ -704,6 +704,7 @@ body {
   padding:0;
   width: 100%;
   overflow-x: hidden;
+    overflow-y: clip;
   }
 
   .animation-container, .experience-container,.qualification-container,.achievements-container,.content, .animated-block, .card, .content {
