@@ -704,7 +704,6 @@ body {
   padding:0;
   width: 100%;
   overflow-x: hidden;
-    overflow-y: clip;
   }
 
   .animation-container, .experience-container,.qualification-container,.achievements-container,.content, .animated-block, .card, .content {
@@ -723,20 +722,18 @@ body {
     margin-left: 40px;
   }
   
-    .message{
-    position: absolute;
+  .message{
+    position: fixed;
     top: 33%; /* Adjust for vertical placement */
     left: 55%; /* Center horizontally */
     transform: translate(-50%); /* Ensure perfect centering */
     width: 90%; /* Responsive width for mobile */
     font-size: 14px; /* Reduce font size for smaller screens */
-    text-align: center;
-    z-index: 1000;
     
   }
 
   .profile-message {
-    position: absolute; /* Keeps it fixed in place */
+    position: fixed; /* Keeps it fixed in place */
     top: 27%; /* Adjust for vertical placement */
         left: 47%; /* Center horizontally */
         transform: translate(-50%); /* Ensure perfect centering */
