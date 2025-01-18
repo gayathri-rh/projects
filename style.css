@@ -733,7 +733,7 @@ body {
   }
 
   .profile-message {
- position: fixed; /* Keeps it fixed in place */
+    position: fixed; /* Keeps it fixed in place */
     top: 27%; /* Adjust for vertical placement */
         left: 47%; /* Center horizontally */
         transform: translate(-50%); /* Ensure perfect centering */
@@ -741,7 +741,7 @@ body {
         z-index:1000;
         text-align: center;
         margin-top: 10px;
-   
+ 
   }
  
   .footer {
