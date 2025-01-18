@@ -734,7 +734,7 @@ body {
 
   .profile-message {
     position: fixed; /* Keeps it fixed in place */
-    top: 27%; /* Adjust for vertical placement */
+    top: 35%; /* Adjust for vertical placement */
         left: 47%; /* Center horizontally */
         transform: translate(-50%); /* Ensure perfect centering */
         width: auto; /* Adjust as needed */
