@@ -788,4 +788,11 @@ body {
   max-height: 80vh; /* Prevent dynamic content from overflowing */
   overflow-y: auto; /* Add vertical scrolling if needed */
 }
+
+.certification-container{
+  gap: 1px;
+}
+.achievement-container{
+  gap: 2px;
+}
 }
