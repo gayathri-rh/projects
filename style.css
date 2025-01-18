@@ -704,6 +704,7 @@ body {
   padding:0;
   width: 100%;
   overflow-x: hidden;
+ 
   }
 
   .animation-container, .experience-container,.qualification-container,.achievements-container,.content, .animated-block, .card, .content {
@@ -765,6 +766,8 @@ body {
   width: fit-content;
   max-width: 90%;
   font-size: 13px;
+  max-height: 250px;
+  overflow-y: auto;
 }
 
 .experience-container {
@@ -772,7 +775,6 @@ body {
         max-height: 80vh; /* Limit the height to 80% of the viewport */
         overflow-y: auto; /* Enable scrolling within this container */
         z-index: 10; /* Ensure proper stacking if needed */
-      
         padding: 10px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
         border-radius: 8px; /* Optional: Rounded corners */
