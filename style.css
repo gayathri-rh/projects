@@ -725,7 +725,7 @@ body {
   
   .message{
     position: fixed;
-    top: 270px; /* Adjust for vertical placement */
+    top: 260px; /* Adjust for vertical placement */
     left: 250px; /* Center horizontally */
     transform: translate(-50%); /* Ensure perfect centering */
     width: 90%; /* Responsive width for mobile */
@@ -735,8 +735,8 @@ body {
 
   .profile-message {
     position: fixed; /* Keeps it fixed in place */
-    top: 270px; /* Adjust for vertical placement */
-        left: 250px; /* Center horizontally */
+    top: 220px; /* Adjust for vertical placement */
+        left: 200px; /* Center horizontally */
         transform: translate(-50%); /* Ensure perfect centering */
         width: auto; /* Adjust as needed */
         z-index:1000;
