@@ -726,7 +726,7 @@ body {
   .message{
     position: fixed;
     top: 260px; /* Adjust for vertical placement */
-    left: 250px; /* Center horizontally */
+    left: 240px; /* Center horizontally */
     transform: translate(-50%); /* Ensure perfect centering */
     width: 90%; /* Responsive width for mobile */
     font-size: 14px; /* Reduce font size for smaller screens */
