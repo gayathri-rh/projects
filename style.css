@@ -766,7 +766,7 @@ body {
   width: fit-content;
   max-width: 90%;
   font-size: 13px;
-  max-height: 250px;
+  max-height: 200px;
   overflow-y: auto;
 }
 
